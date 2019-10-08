@@ -5,6 +5,7 @@ let userIngredients = []
 let selectedIngredients = []
 let apiKey = '1627e18e0caa4fd4890ad8754a8f6ed8'
 let savedRecipes = []
+let allergy = []
 
 const addIngredientToDOM = ingredient => {//Creates an entry under ingredients with checkbox
     let foodDiv = document.createElement('li')
@@ -245,5 +246,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Dropdown.init(elem);
   });
 
-
+  window.onload=function() { // when the page has loaded
+    document.getElementById("dropdown2").onchange=function() {
+      var val = this.value;
+      console.log(val)
+    }
+  }
 getFood()
